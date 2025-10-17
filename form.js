@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const selectedRadio = [...radios].some((radio) => radio.checked);
     if (!selectedRadio) {
-      showError(radios[0].closest(".names"), "Please select a query type");
+      showError(radios[0].closest(".names"), "Please select a query type", false);
       valid = false;
     }
 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!checkbox.checked) {
-      showError(checkbox.closest(".every"), "To submit this form, please consent to being contacted");
+      showError(checkbox.closest(".every"), "To submit this form, please consent to being contacted", false);
       valid = false;
     }
 
@@ -75,13 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Fonction pour afficher les erreurs
-  function showError(element, message) {
+  function showError(element, message, highlight = true) {
     const parent = element.closest(".names") || element.closest(".every");
     const errorField = parent.querySelector(".error");
     if (errorField) {
       errorField.textContent = message;
     }
-    element.classList.add("error-border");
+    if (highlight) element.classList.add("error-border");
   }
 
   // Vérifie email valide

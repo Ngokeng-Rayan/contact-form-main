@@ -10,12 +10,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(186, 15%, 59%);
+    background-color: hsl(183, 36%, 88%);
     font-family: 'karla', sans-serif;
 }
 .container{
     width: 550px;
-    height: 500px;
+    height: 85vh;
     max-width: 96vw;
    display: flex;
    border-radius: 10px;
@@ -23,6 +23,7 @@ body{
    background-color: hsl(0, 0%, 100%);
    padding: 22px 25px;
    justify-content: space-evenly;
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 
 }
 label{
@@ -85,7 +86,7 @@ button{
     cursor: pointer;
 }
 .rectangles:hover, .rectangles:active, .rectangles:focus{
-    outline: 1.2px solid hsl(169, 82%, 27%);
+    outline: 1.7px solid hsl(169, 82%, 27%);
 }
 .checked-radio{
     display: inline-block;
@@ -108,9 +109,13 @@ button{
     background-color: hsl(186, 23%, 82%);
 }
 
+.consent{
+    cursor: pointer;
+}
 
-
-
+.pointer{
+    cursor: pointer;
+}
 
 .checked-checkedbox{
     display: inline-block;
