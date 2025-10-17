@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Contact Form</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Contact Us</h2>
+        <div class="row-inputs every">
+            <p class="names">
+                <label for="firstname">First Name <span class="star">*</span></label>
+                <input type="text" id="firstname" name="firstname" class="rectangles">
+                <small class="error"></small>
+            </p>
+            <p class="names">
+                <label for="lastname">Last Name <span class="star">*</span></label>
+                <input type="text" id="lastname" name="lastname" class="rectangles">
+                <small class="error"></small>
+            </p>
+        </div>
+        <p class="names every">
+            <label for="email">Email Address <span class="star">*</span></label>
+            <input type="text" id="email" name="email" class="rectangles">
+            <small class="error"></small>
+        </p>
+        <div class="names every">
+            <label for="">Query Type <span class="star">*</span></label>
+            <div class="row-inputs" >
+                <div class="radio-container rectangles">
+                    <input type="radio" name="query-type" class="radio-input" id="general" value="GeneralEnquiry">
+                    <span class="checked-radio"></span>
+                    <label for="general">General Enquiry</label>
+                </div>
+                <div class="radio-container rectangles">
+                    <input type="radio" name="query-type" class="radio-input" id="support" value="Support_Request">
+                    <span class="checked-radio"></span>
+                    <label for="support">Support Request</label>
+                </div>
+            </div>
+            <small class="error"></small>
+        </div>
+        <p class="names every">
+            <label for="message"> Message <span class="star">*</span></label>
+            <textarea name="Message" id="message" class="rectangles"></textarea>
+            <small class="error"></small>
+        </p>
+        <p class="every consent">
+            <input type="checkbox" id="consent" class="checkbox-input">
+            <span class="checked-checkedbox"></span>
+            <label for="consent"> I consent to being contacted by the team <span class="star">*</span></label>
+            <small class="error"></small>
+        </p>
+        <button class="submit-bouton every">Submit</button>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(186, 15%, 59%);
+    font-family: 'karla', sans-serif;
+}
+.container{
+    width: 550px;
+    height: 500px;
+    max-width: 96vw;
+   display: flex;
+   border-radius: 10px;
+   flex-direction: column;
+   background-color: hsl(0, 0%, 100%);
+   padding: 22px 25px;
+   justify-content: space-evenly;
+
+}
+label{
+    font-size: 14px;
+}
+.every{
+    width: 100%;
+}
+.names{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.row-inputs{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    /* overflow: hidden; */
+}
+.radio-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    /* justify-content: space-evenly; */
+    gap: 10px;
+}
+
+input[type='text'], .radio-container{
+    height: 28px;
+    border-radius: 5px;
+    border: none;
+    outline: 1px solid hsl(186, 15%, 59%);
+}
+input[type='text']{
+    padding: 15px;
+}
+textarea{
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    outline: 1px solid hsl(186, 15%, 59%);
+    padding: 10px;
+}
+
+button{
+    height: 40px;
+    background-color: hsl(168, 86%, 14%);
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.rectangles{
+    cursor: pointer;
+}
+.rectangles:hover, .rectangles:active, .rectangles:focus{
+    outline: 1.2px solid hsl(169, 82%, 27%);
+}
+.checked-radio{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 0;
+    background-image: url('./assets/images/icon-radio-selected.svg');
+    display: none;
+}
+
+.radio-input:checked {
+    display: none;
+}
+
+.radio-input:checked + .checked-radio{
+    display: inline-block;
+}
+.radio-container:has(.radio-input:checked){
+    background-color: hsl(186, 23%, 82%);
+}
+
+
+
+
+
+.checked-checkedbox{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    padding: 0;
+    background-image: url('./assets/images/icon-checkbox-check.svg');
+    background-size: cover;
+    display: none;
+}
+
+.checkbox-input:checked {
+    display: none;
+}
+
+.checkbox-input:checked + .checked-checkedbox{
+    display: inline-block;
+}
+
+
+@media (max-width: 490px) {
+    .row-inputs {
+        flex-direction: column;
+        gap: 15px; 
+    }
+
+    .radio-container {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 12px;
+    }
+
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        gap: 5px
+    }
+
+    input[type='text'],
+    textarea,
+    .radio-container {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+    
+    .title {
+        text-align: center;
+     
+        
+    }
+    textarea{
+        height: 90px;
+    }
+}
+
+
+
+/* ---------- Messages d’erreur ---------- */
+.error {
+  color: hsl(0, 66%, 54%);
+  font-size: 12px;
+}
+
+.error-border {
+  outline: 1.5px solid hsl(0, 66%, 54%) !important;
+}
+
+/* ---------- Toast de succès ---------- */
+.toast-success {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-200%);
+  background-color: hsl(169, 82%, 27%);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+.toast-success img {
+  width: 18px;
+  height: 18px;
+}
+
+.toast-success .toast-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.toast-success .toast-msg {
+  font-size: 13px;
+  color: hsl(0, 0%, 96%);
+}
+
+/* Apparition du toast */
+.toast-success.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
